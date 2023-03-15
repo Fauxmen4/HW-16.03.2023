@@ -1,19 +1,25 @@
 #include <iostream>
 #include <string>
-#include <md5.h>
 
 using namespace std;
 
-// string encrypt(string block, string key) {
+const string ALPHABET = "abcdefghijklmnopqrstuvwxyz";
 
-// }
+string VigenerEncrypt(string input, string key) {
 
-// string decrypt(string cipher, string key) {
+}
 
-// }
+string VigenerDecrypt(string input, string key) {
+
+}
 
 int main() {
-    int a, b = 65, c = 83;
-    a = b ^ c;
-    cout << a << '\n';
+    string plainText, key;
+
+    cout << "Enter original text: ";
+    cin >> plainText;
+    cout << "Enter key: ";
+    cin >> key;
+
+
 }

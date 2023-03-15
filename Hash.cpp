@@ -27,17 +27,5 @@ string HashFunctionStatistics(string input) {
 }
 
 int main() {
-    ifstream fin("./Example.txt");
-
-    //! Warning!!! Just an example.
-    string str;
-    if (!fin.is_open()) {return 1;}
-
-    while(getline(fin, str)) {
-        cout << str << '\n';
-    }
     
-
-    fin.close();
-    return 0;
 }
