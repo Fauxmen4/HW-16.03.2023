@@ -4,15 +4,16 @@
 using namespace std;
 
 const int ALPHABET_LENGTH = 26;
+const int FIRST_ALPHABET_LETTER_IN_ASCII = 97;
 
 int CharCode(char s) {
-    return (int)s - 97;
+    return (int)s - FIRST_ALPHABET_LETTER_IN_ASCII;
 }
 
 string VigenerEncrypt(const string &input, const string &key) {
     string output;
     for(int i = 0; i < input.length(); i++) {
-        output += (char)((CharCode(input[i]) + CharCode(key[i % key.length()])) % ALPHABET_LENGTH + 97);
+        output += (char)((CharCode(input[i]) + CharCode(key[i % key.length()])) % ALPHABET_LENGTH + FIRST_ALPHABET_LETTER_IN_ASCII);
     }
     return output;
 }
@@ -20,7 +21,7 @@ string VigenerEncrypt(const string &input, const string &key) {
 string VigenerDecrypt(const string &input, const string &key) {
     string output = "";
     for(int i = 0; i < input.length(); i++) {
-        output += (char)((CharCode(input[i]) - CharCode(key[i % key.length()]) + 26) % ALPHABET_LENGTH + 97);
+        output += (char)((CharCode(input[i]) - CharCode(key[i % key.length()]) + ALPHABET_LENGTH) % ALPHABET_LENGTH + FIRST_ALPHABET_LETTER_IN_ASCII);
     }
     return output;
 }
