@@ -15,9 +15,7 @@ string HashFunctionStatistics(string input) {
         charStatistics[(int)(*i)]++;
     }
     for (int i = 0; i < 128; i++) {
-        if (charStatistics[i] != 0) {
-            hashValue += to_string(charStatistics[i]);     
-        }
+        hashValue += to_string(charStatistics[i]);     
     }
     return (string)hashValue;
 }
