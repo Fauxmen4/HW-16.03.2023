@@ -9,7 +9,7 @@ int CharCode(char s) {
     return (int)s - 97;
 }
 
-string VigenerEncrypt(string &input, string &key) {
+string VigenerEncrypt(const string &input, const string &key) {
     string output;
     for(int i = 0; i < input.length(); i++) {
         output += (char)((CharCode(input[i]) + CharCode(key[i % key.length()])) % ALPHABET_LENGTH + 97);
@@ -17,7 +17,7 @@ string VigenerEncrypt(string &input, string &key) {
     return output;
 }
 
-string VigenerDecrypt(string &input, string &key) {
+string VigenerDecrypt(const string &input, const string &key) {
     string output = "";
     for(int i = 0; i < input.length(); i++) {
         output += (char)((CharCode(input[i]) - CharCode(key[i % key.length()]) + 26) % ALPHABET_LENGTH + 97);
